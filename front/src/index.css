@@ -1,0 +1,37 @@
+:root {
+  /* Paleta de Cores (Inspirada em Smart City/Tecnologia) */
+  --primary-color: #0056b3;     /* Azul escuro (bom contraste) */
+  --secondary-color: #00a8ff;   /* Azul claro para detalhes */
+  --background-color: #f4f4f9;  /* Cinza muito claro (conforto visual) */
+  --text-color: #333333;        /* Cinza escuro (leitura) */
+  --white: #ffffff;
+  --danger: #d9534f;            /* Vermelho para erros/logout */
+  --success: #5cb85c;           /* Verde para status ativo */
+  
+  /* Fontes */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
