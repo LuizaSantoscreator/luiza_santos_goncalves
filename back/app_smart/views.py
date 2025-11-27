@@ -37,7 +37,7 @@ class SensorViewSet(viewsets.ModelViewSet):
         status_sensor = self.request.query_params.get('status')
         
         if tipo:
-            queryset = queryset.filter(sensor=tipo)
+            queryset = queryset.filter(sensor__icontains=tipo)
         
         if status_sensor:
             is_active = status_sensor.lower() == 'true'

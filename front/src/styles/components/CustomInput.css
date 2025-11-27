@@ -1,0 +1,26 @@
+/* src/components/CustomInput.css */
+.custom-input-container {
+  margin-bottom: 15px;
+}
+
+.custom-input-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333; /* ou var(--text-color) */
+}
+
+.custom-input-field {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  background-color: #fff;
+  transition: border-color 0.3s;
+}
+
+.custom-input-field:focus {
+  border-color: #0056b3; /* ou var(--primary-color) */
+  outline: none;
+}

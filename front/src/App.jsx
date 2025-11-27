@@ -1,25 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
+import Home from './pages/Home';
+import SensorData from './pages/SensorData';
+import SensorHistory from './pages/SensorHistory'; // <--- IMPORTANTE: Importe a nova página aqui
 
-// Componente simples para a Home (faremos a real depois)
-const Home = () => {
-  const handleLogout = () => {
-    localStorage.removeItem('access_token');
-    window.location.href = '/login';
-  };
-
-  return (
-    <div style={{ padding: '20px' }}>
-      <h1>Bem-vindo ao Sistema Smart City</h1>
-      <button onClick={handleLogout} style={{ padding: '10px', background: 'red', color: 'white' }}>
-        Sair
-      </button>
-    </div>
-  );
-};
-
-// Proteção de Rotas: Só deixa entrar se tiver token 
 const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem('access_token');
   return token ? children : <Navigate to="/login" />;
@@ -29,9 +14,10 @@ function App() {
   return (
     <Router>
       <Routes>
+        {/* Rota Pública */}
         <Route path="/login" element={<Login />} />
         
-        {/* Rota Protegida: Home */}
+        {/* Rotas Privadas */}
         <Route 
           path="/" 
           element={
@@ -40,6 +26,37 @@ function App() {
             </PrivateRoute>
           } 
         />
+
+        <Route 
+          path="/sensores/:tipo" 
+          element={
+            <PrivateRoute>
+              <SensorData />
+            </PrivateRoute>
+          } 
+        />
+
+        {/* --- NOVA ROTA ADICIONADA: Histórico --- */}
+        <Route 
+          path="/history/:id" 
+          element={
+            <PrivateRoute>
+              <SensorHistory />
+            </PrivateRoute>
+          } 
+        />
+
+        {/* Rota de Cadastro (que faremos a seguir) */}
+        {/* <Route 
+          path="/cadastrar-sensor" 
+          element={
+            <PrivateRoute>
+              <SensorForm />
+            </PrivateRoute>
+          } 
+        /> 
+        */}
+
       </Routes>
     </Router>
   );

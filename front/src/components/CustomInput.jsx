@@ -1,14 +1,14 @@
 import React from 'react';
-import styles from '../styles/components/CustomInput.module.css'; // Importação do CSS Modular
+import '../styles/components/CustomInput.css'; // <--- CORREÇÃO: Importação direta (sem 'styles from')
 
 const CustomInput = ({ label, value, onChange, type = "text", placeholder }) => {
   return (
-    <div className={styles.container}>
-      <label className={styles.label}>
+    <div className="custom-input-container">
+      <label className="custom-input-label">
         {label}
       </label>
       <input
-        className={styles.input}
+        className="custom-input-field"
         type={type}
         value={value}
         onChange={onChange}

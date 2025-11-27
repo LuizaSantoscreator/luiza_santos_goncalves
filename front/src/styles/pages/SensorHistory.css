@@ -1,0 +1,49 @@
+.history-container {
+    min-height: 100vh;
+    background-color: #f4f4f9;
+  }
+  
+  .history-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  .history-title {
+    color: #0056b3;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  
+  .chart-wrapper {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    height: 400px; /* <--- ESSENCIAL PARA O GRÁFICO APARECER */
+  }
+  
+  .history-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .history-table th, .history-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+  
+  .history-table th {
+    background-color: #00a8ff;
+    color: white;
+  }
+  
+  .history-table tr:hover {
+    background-color: #f8f9fa;
+  }
