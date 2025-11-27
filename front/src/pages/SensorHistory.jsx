@@ -33,8 +33,8 @@ const SensorHistory = () => {
   }, [id]);
 
   // Ignorando aviso do ESLint corretamente
-  // eslint-disable-next-line react/prop-types
-  const CustomTooltip = ({ active, payload, label }) => {
+  // eslint-disable-next-line react/prop-types 
+  const CustomTooltip = ({ active, payload, label }) => {//ignorar
     if (active && payload && payload.length) {
       const dados = payload[0].payload;
       return (
