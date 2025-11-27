@@ -8,7 +8,7 @@ class Responsavel(models.Model):
 
 class Local(models.Model):
     # No diagrama, o campo chama "Local", aqui usamos 'nome' para ficar mais claro
-    nome = models.CharField(max_length=100) 
+    nome = models.CharField(max_length=100) #definindo tamanho
 
     def __str__(self):
         return self.nome
