@@ -23,7 +23,7 @@ class Command(BaseCommand):
             self.stdout.write(f'Gerando dados para: {sensor.sensor} (ID: {sensor.id})...')
             
             # Gera 50 medições por sensor nas últimas 24h
-            for i in range(50):
+            for i in range(2):
                 # Valor aleatório dependendo do tipo
                 if sensor.sensor == 'Temperatura':
                     valor = round(random.uniform(20.0, 35.0), 1) # 20°C a 35°C

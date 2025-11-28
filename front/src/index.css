@@ -1,37 +1,45 @@
-:root {
-  /* Paleta de Cores (Inspirada em Smart City/Tecnologia) */
-  --primary-color: #0056b3;     /* Azul escuro (bom contraste) */
-  --secondary-color: #00a8ff;   /* Azul claro para detalhes */
-  --background-color: #f4f4f9;  /* Cinza muito claro (conforto visual) */
-  --text-color: #333333;        /* Cinza escuro (leitura) */
-  --white: #ffffff;
-  --danger: #d9534f;            /* Vermelho para erros/logout */
-  --success: #5cb85c;           /* Verde para status ativo */
-  
-  /* Fontes */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+root {
+  --bg: #0d1117;           /* Fundo principal */
+  --bg-secondary: #161b22; /* Card, nav, blocos */
+  --bg-tertiary: #1d222a;  /* Hover, efeito */
+
+  --border: #30363d;
+
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+
+  --primary: #58a6ff;
+  --primary-hover: #1f6feb;
+
+  --success: #2ea043;
+  --danger: #f85149;
+  --warning: #c69026;
+
+  --shadow: 0 0 12px rgba(0,0,0,0.45);
+
+  --radius: 8px;
+  --transition: 0.25s ease;
 }
 
+/* RESET E BASELINE */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
 }
 
-button {
-  cursor: pointer;
-  border: none;
-  border-radius: 4px;
-  font-weight: bold;
-  transition: opacity 0.3s;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-button:hover {
-  opacity: 0.9;
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
