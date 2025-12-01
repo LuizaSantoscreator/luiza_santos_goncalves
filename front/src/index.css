@@ -30,8 +30,11 @@ root {
 }
 
 body {
-  background: var(--bg);
-  color: var(--text);
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; /* Fundo Global */
+  color: #f1f5f9; /* Texto Global */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 a {

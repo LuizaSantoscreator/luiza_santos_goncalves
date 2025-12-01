@@ -1,53 +1,65 @@
 .home-container {
   min-height: 100vh;
-  background: var(--bg);
+  background-color: #f8fafc; /* Fundo Claro */
 }
 
 .home-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
 .home-title {
-  font-size: 1.8rem;
   text-align: center;
-  color: var(--primary);
-  margin-bottom: 32px;
-  font-weight: 700;
+  margin-bottom: 50px;
+  color: #1e293b; /* Título Escuro (para ler no branco) */
+  font-size: 2.5rem;
+  font-weight: 800;
 }
 
 .home-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
+  gap: 30px;
 }
 
-/* CARD */
 .home-card {
-  background: var(--bg-secondary);
-  padding: 32px 24px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
+  background: #1e293b; /* Card Dark */
+  padding: 40px;
+  border-radius: 12px;
   text-align: center;
-  transition: var(--transition);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  box-shadow: var(--shadow);
+  border-bottom: 4px solid #38bdf8;
+  transition: all 0.3s ease;
 }
 
 .home-card:hover {
-  background: var(--bg-tertiary);
-  transform: translateY(-6px);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+}
+
+/* Texto dentro do card tem que ser claro */
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #f1f5f9; 
 }
 
 .card-icon {
-  font-size: 42px;
-  margin-bottom: 14px;
-  color: var(--primary);
+  display: block;
+  margin-bottom: 20px;
 }
 
-.card-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text);
+.icon-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  /* Filtro para deixar o ícone branco se ele for preto */
+  filter: brightness(0) invert(1); 
+  transition: transform 0.3s ease;
+}
+
+.home-card:hover .icon-img {
+  transform: scale(1.1);
 }

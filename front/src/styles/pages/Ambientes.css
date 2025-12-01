@@ -1,41 +1,95 @@
-.ambientes-container {
-    min-height: 100vh;
-    background-color: #f4f4f9;
-    padding: 40px 20px;
-  }
-  
-  .content-wrap {
-    max-width: 1000px;
-    margin: 0 auto;
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  }
-  
-  .page-title {
-    color: #0056b3;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  .table th, .table td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-  }
-  
-  .table th {
-    background-color: #0056b3;
-    color: white;
-  }
-  
-  .table tr:hover {
-    background-color: #f1f1f1;
-  }
+.page-container, .ambientes-container {
+  min-height: 100vh;
+  background-color: #ffffff;
+
+}
+
+.content-wrap {
+  max-width: 1100px;
+  margin: 40px auto;
+  background-color: #36445a;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px -3px #47454566;
+  border: 1px solid #334155;
+}
+
+.page-title, .headerTitle h1 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+/* Header com título e botão */
+.headerTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Botão Novo Sensor */
+.btn-add {
+  padding: 10px 20px; 
+  background-color: #10b981; /* Verde Esmeralda */
+  color: #ffffff; 
+  border-radius: 8px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.btn-add:hover {
+  background-color: #059669;
+}
+
+/* Estilo da Tabela Dark */
+.data-table, .ambientes-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 20px;
+}
+
+.data-table th, .ambientes-table th {
+  background-color: #091635;
+  color: #ffffff;
+  padding: 16px;
+  text-align: left;
+  border-bottom: 2px solid #b3c6e0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+}
+
+.data-table td, .ambientes-table td {
+  padding: 16px;
+  border-bottom: 1px solid #b3c6e0;
+  color: #ffffff;
+}
+
+.data-table tr:hover, .ambientes-table tr:hover {
+  background-color: #273549; /* Realce ao passar mouse */
+  cursor: pointer;
+}
+
+/* Status Pills (Bolinhas coloridas) */
+.status-active {
+  color: #10b981;
+  background-color: rgba(20, 100, 56, 0.473);
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-inactive {
+  color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.1);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}

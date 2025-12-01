@@ -32,15 +32,37 @@ const SensorHistory = () => {
     fetchHistorico();
   }, [id]);
 
-  // Ignorando aviso do ESLint corretamente - eslint-disable-next-line react/prop-types 
+  // --- NOVA FUNÇÃO DE EXPORTAÇÃO ---
+  const handleExport = async () => {
+    try {
+      // Importante: responseType 'blob' para arquivos binários (Excel/PDF)
+      const response = await api.get(`/medicoes/exportar/?sensor=${id}`, {
+        responseType: 'blob',
+      });
 
-  const CustomTooltip = ({ active, payload }) => {//ignorar
+      // Cria um link temporário para forçar o download no navegador
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', `historico_sensor_${id}.xlsx`);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+    } catch (error) {
+      console.error("Erro ao exportar", error);
+      alert("Erro ao baixar o arquivo Excel.");
+    }
+  };
+  // --------------------------------
+
+  // eslint-disable-next-line react/prop-types
+  const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       const dados = payload[0].payload;
       return (
-        <div style={{ backgroundColor: '#fff', padding: '10px', border: '1px solid #ccc' }}>
-          <p style={{ fontWeight: 'bold' }}>{dados.dataFormatada}</p>
-          <p style={{ color: '#0056b3' }}>Valor: {dados.valor}</p>
+        <div className="custom-tooltip">
+          <p className="tooltip-date">{dados.dataFormatada}</p>
+          <p className="tooltip-value">Valor: {dados.valor}</p>
         </div>
       );
     }
@@ -52,57 +74,67 @@ const SensorHistory = () => {
       <Navbar />
       
       <main className="history-content">
-        <h1 className="history-title">Histórico do Sensor #{id}</h1>
+        <div className="header-flex">
+          <h1 className="history-title">Histórico do Sensor #{id}</h1>
+          
+          {/* BOTÃO DE EXPORTAR */}
+          <button onClick={handleExport} className="btn-export">
+            Baixar Excel
+          </button>
+        </div>
 
         {loading ? (
-          <p style={{textAlign: 'center'}}>Carregando gráfico...</p>
+          <p style={{textAlign: 'center', color: '#fff'}}>Carregando gráfico...</p>
         ) : (
-          <div className="chart-wrapper">
-            <h3 style={{marginBottom: '20px', color: '#666'}}>Variação no Tempo</h3>
-            
-            <ResponsiveContainer width="100%" height="100%">
-              <AreaChart data={medicoes}>
-                <defs>
-                  <linearGradient id="colorValor" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#0056b3" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#0056b3" stopOpacity={0}/>
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="id" hide />
-                <YAxis />
-                <Tooltip content={<CustomTooltip />} />
-                <Area 
-                  type="monotone" 
-                  dataKey="valor" 
-                  stroke="#0056b3" 
-                  fillOpacity={1} 
-                  fill="url(#colorValor)" 
-                />
-              </AreaChart>
-            </ResponsiveContainer>
-          </div>
-        )}
+          <>
+            <div className="chart-wrapper">
+              <h3 className="chart-title">Variação no Tempo</h3>
+              
+              <ResponsiveContainer width="100%" height="100%">
+                <AreaChart data={medicoes}>
+                  <defs>
+                    <linearGradient id="colorValor" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="var(--chart-primary)" stopOpacity={0.8}/>
+                      <stop offset="95%" stopColor="var(--chart-primary)" stopOpacity={0}/>
+                    </linearGradient>
+                  </defs>
+                  <CartesianGrid strokeDasharray="3 3" stroke="var(--chart-grid)" />
+                  <XAxis dataKey="id" hide />
+                  <YAxis stroke="var(--chart-text)" />
+                  <Tooltip content={<CustomTooltip />} />
+                  <Area 
+                    type="monotone" 
+                    dataKey="valor" 
+                    stroke="var(--chart-primary)" 
+                    fillOpacity={1} 
+                    fill="url(#colorValor)" 
+                  />
+                </AreaChart>
+              </ResponsiveContainer>
+            </div>
 
-        <h3 style={{marginBottom: '10px', color: '#666', marginTop: '30px'}}>Registros Detalhados</h3>
-        <table className="history-table">
-          <thead>
-            <tr>
-              <th>ID Leitura</th>
-              <th>Data/Hora</th>
-              <th>Valor Lido</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[...medicoes].reverse().map((medicao) => (
-              <tr key={medicao.id}>
-                <td>{medicao.id}</td>
-                <td>{medicao.dataFormatada}</td>
-                <td>{medicao.valor}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+            <h3 className="table-title">Registros Detalhados</h3>
+            
+            <table className="history-table">
+              <thead>
+                <tr>
+                  <th>ID Leitura</th>
+                  <th>Data/Hora</th>
+                  <th>Valor Lido</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[...medicoes].reverse().map((medicao) => (
+                  <tr key={medicao.id}>
+                    <td>{medicao.id}</td>
+                    <td>{medicao.dataFormatada}</td>
+                    <td>{medicao.valor}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </>
+        )}
       </main>
     </div>
   );

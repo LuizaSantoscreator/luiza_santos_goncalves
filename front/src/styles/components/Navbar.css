@@ -1,56 +1,50 @@
 .header {
-  background: var(--bg-secondary);
-  border-bottom: 1px solid var(--border);
-  padding: 14px 28px;
+  background-color: #0f1725; /* Card Dark Blue */
+  color: #f1f5f9;
+  padding: 1rem 2rem;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  height: 64px;
-  box-shadow: var(--shadow);
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  align-items: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid #fafcff;
 }
 
 .logo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  cursor: pointer;
-  color: var(--primary);
-  transition: var(--transition);
-}
-
-.logo:hover {
-  color: var(--primary-hover);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff; /* Ciano */
+  letter-spacing: 1px;
 }
 
 .nav-links {
   display: flex;
-  gap: 26px;
+  gap: 25px;
 }
 
 .nav-item {
-  color: var(--text-muted);
+  color: #fafafa;
+  text-decoration: none;
   font-weight: 500;
-  transition: var(--transition);
+  transition: all 0.3s ease;
 }
 
 .nav-item:hover {
-  color: var(--text);
+  color: #a2d5eb;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
 }
 
 .logoutBtn {
-  background: transparent;
-  color: var(--danger);
-  border: 1px solid var(--danger);
-  padding: 8px 16px;
-  border-radius: var(--radius);
+  background-color: transparent;
+  color: #e9a2a2; /* Vermelho suave */
+  padding: 8px 20px;
+  border: 2px solid #e9a2a2;
+  border-radius: 6px;
+  font-weight: bold;
   cursor: pointer;
-  font-weight: 600;
-  transition: var(--transition);
+  transition: all 0.3s;
 }
 
 .logoutBtn:hover {
-  background: var(--danger);
-  color: var(--bg);
+  background-color: #ef4444;
+  color: white;
 }

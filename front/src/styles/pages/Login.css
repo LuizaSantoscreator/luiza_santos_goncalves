@@ -2,51 +2,54 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--bg);
   height: 100vh;
+  background-color: #f8fafc; /* Fundo Claro */
 }
 
 .form-wrapper {
-  background: var(--bg-secondary);
-  padding: 38px 32px;
+  background-color: #1e293b; /* Card Dark */
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); /* Sombra mais leve */
   width: 100%;
-  max-width: 380px;
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  max-width: 400px;
+  color: #f1f5f9; /* Texto claro dentro do card */
 }
 
 .login-title {
-  color: var(--primary);
   text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 24px;
+  margin-bottom: 30px;
+  color: #38bdf8; /* Azul Ciano */
+  font-size: 2rem;
   font-weight: 700;
 }
 
 .login-button {
   width: 100%;
-  background: var(--primary);
-  color: var(--bg);
+  padding: 14px;
+  background-color: #38bdf8;
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 800;
+  margin-top: 20px;
   border: none;
-  padding: 12px;
-  margin-top: 18px;
-  border-radius: var(--radius);
-  font-weight: 600;
+  border-radius: 8px;
   cursor: pointer;
-  transition: var(--transition);
+  transition: transform 0.2s;
 }
 
 .login-button:hover {
-  background: var(--primary-hover);
+  background-color: #0ea5e9;
+  transform: translateY(-2px);
 }
 
 .error-message {
-  background: rgba(248, 81, 73, 0.15);
-  border-left: 4px solid var(--danger);
+  color: #fca5a5;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+  background-color: rgba(239, 68, 68, 0.1);
   padding: 10px;
-  color: var(--danger);
-  border-radius: var(--radius);
-  margin-bottom: 12px;
-  font-size: 0.9rem;
+  border-radius: 6px;
+  border: 1px solid #ef4444;
 }

@@ -21,8 +21,7 @@ const Navbar = () => {
       <nav className="nav-links">
         <Link to="/" className="nav-item">Dashboard</Link>
         <Link to="/ambientes" className="nav-item">Ambientes</Link>
-        {/* Descomente a linha abaixo quando criar o formulário */}
-        {/* <Link to="/cadastrar-sensor" className="nav-item">Novo Sensor</Link> */}
+        <Link to="/cadastrar-sensor" className="nav-item">Novo Sensor</Link>
       </nav>
 
       <button onClick={handleLogout} className="logoutBtn">

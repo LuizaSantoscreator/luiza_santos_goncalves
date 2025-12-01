@@ -15,15 +15,16 @@ const Ambientes = () => {
         setAmbientes(response.data);
       } catch (error) {
         console.error("Erro ao buscar ambientes", error);
-        alert("Erro ao carregar lista de ambientes.");
       } finally {
         setLoading(false);
       }
     }
+
     fetchAmbientes();
   }, []);
 
   return (
+    // CLASSE CORRETA: ambientes-container
     <div className="ambientes-container">
       <Navbar />
       
@@ -33,26 +34,31 @@ const Ambientes = () => {
         {loading ? (
           <p style={{textAlign: 'center'}}>Carregando...</p>
         ) : (
-          <table className="table">
+          // CLASSE CORRETA: ambientes-table
+          <table className="ambientes-table">
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Nome do Local</th>
+                <th>Local</th>
                 <th>Descrição (Sala)</th>
                 <th>Responsável</th>
               </tr>
             </thead>
             <tbody>
-              {ambientes.map((ambiente) => (
-                <tr key={ambiente.id}>
-                  <td>{ambiente.id}</td>
-                  {/* O Backend manda o ID ou Objeto, dependendo do Serializer. 
-                      Se aparecer [Object object], avise que ajustamos. */}
-                  <td>{typeof ambiente.local === 'object' ? ambiente.local.nome : ambiente.local}</td>
-                  <td>{ambiente.descricao}</td>
-                  <td>{typeof ambiente.responsavel === 'object' ? ambiente.responsavel.nome : ambiente.responsavel}</td>
+              {ambientes.length === 0 ? (
+                <tr>
+                  <td colSpan="4" style={{textAlign: 'center'}}>Nenhum ambiente cadastrado.</td>
                 </tr>
-              ))}
+              ) : (
+                ambientes.map((ambiente) => (
+                  <tr key={ambiente.id}>
+                    <td>{ambiente.id}</td>
+                    <td>{typeof ambiente.local === 'object' ? ambiente.local.nome : ambiente.local}</td> 
+                    <td>{ambiente.descricao}</td>
+                    <td>{typeof ambiente.responsavel === 'object' ? ambiente.responsavel.nome : ambiente.responsavel}</td>
+                  </tr>
+                ))
+              )}
             </tbody>
           </table>
         )}

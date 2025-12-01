@@ -1,45 +1,64 @@
+.form-page-container {
+  min-height: 100vh;
+  background-color: #f8fafc; /* Fundo Claro */
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 .form-container {
-    max-width: 600px;
-    margin: 40px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .form-group input, .form-group select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-color: white;
-  }
-  
-  .btn-save {
-    width: 100%;
-    padding: 12px;
-    background-color: #28a745;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    margin-top: 10px;
-    cursor: pointer;
-  }
-  
-  .btn-save:hover {
-    background-color: #218838;
-  }
+  max-width: 600px;
+  margin: 60px auto;
+  background-color: #1e293b; /* Card Dark */
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+/* Inputs Escuros para manter consistência dentro do card */
+.form-group input, .form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #0f172a; 
+  color: white;
+}
+
+.form-group input:focus, .form-group select:focus {
+  border-color: #38bdf8;
+  outline: none;
+}
+
+.btn-save {
+  width: 100%;
+  padding: 14px;
+  background-color: #10b981;
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+}
