@@ -60,7 +60,7 @@ const SensorData = () => {
             onClick={() => navigate('/cadastrar-sensor')} 
             className="btn-add"
           >
-            + Novo Sensor
+             Novo Sensor
           </button>
         </div>
 
