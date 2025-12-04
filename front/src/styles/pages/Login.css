@@ -1,0 +1,55 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8fafc; /* Fundo Claro */
+}
+
+.form-wrapper {
+  background-color: #1e293b; /* Card Dark */
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); /* Sombra mais leve */
+  width: 100%;
+  max-width: 400px;
+  color: #f1f5f9; /* Texto claro dentro do card */
+}
+
+.login-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #38bdf8; /* Azul Ciano */
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #38bdf8;
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 800;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.login-button:hover {
+  background-color: #0ea5e9;
+  transform: translateY(-2px);
+}
+
+.error-message {
+  color: #fca5a5;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px;
+  background-color: rgba(239, 68, 68, 0.1);
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ef4444;
+}

@@ -1,0 +1,105 @@
+/* Container Principal (Fundo Claro/Gelo) */
+.home-container {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  padding: 0;
+}
+
+/* Área de Conteúdo Centralizada */
+.home-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+/* Título da Página (Escuro para ler no fundo claro) */
+.home-title {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #1e293b;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+/* --- CARD DE INFORMAÇÃO (HERO) --- */
+.info-card {
+  background-color: #1e293b; /* Azul Escuro */
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #334155;
+  border-left: 6px solid #38bdf8; /* Detalhe lateral Ciano */
+  margin-bottom: 50px;
+  color: #f1f5f9; /* Texto Claro */
+}
+
+.info-card h2 {
+  color: #38bdf8;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.info-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #cbd5e1; /* Cinza claro */
+  margin-bottom: 15px;
+}
+
+.info-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* --- GRID DE BOTÕES --- */
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* Cartões dos Sensores */
+.home-card {
+  background-color: #1e293b; /* Card Dark */
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border: 1px solid #334155;
+  border-bottom: 4px solid #38bdf8;
+  transition: all 0.3s ease;
+}
+
+.home-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+  background-color: #263346; /* Levemente mais claro no hover */
+}
+
+/* Estilo do Ícone (Imagem PNG) */
+.icon-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  
+  /* TRUQUE: Se seus ícones forem pretos, isso os torna brancos 
+     para aparecerem no fundo escuro. Se já forem coloridos, 
+     pode remover a linha 'filter' abaixo. */
+  filter: brightness(0) invert(1); 
+  
+  transition: transform 0.3s ease;
+}
+
+.home-card:hover .icon-img {
+  transform: scale(1.1); /* Zoom suave ao passar o mouse */
+}
+
+/* Título do Card */
+.card-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #f1f5f9; /* Texto Claro */
+  display: block;
+}

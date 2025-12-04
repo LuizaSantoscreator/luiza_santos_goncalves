@@ -1,0 +1,51 @@
+.header {
+  background-color: #0f1725; /* Card Dark Blue */
+  color: #f1f5f9;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  border-bottom: 4.5px solid #38bdf8;
+  transition: all 0.3s ease;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff; /* Ciano */
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-item {
+  color: #fafafa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #a2d5eb;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+}
+
+.logoutBtn {
+  background-color: transparent;
+  color: #e9a2a2; /* Vermelho suave */
+  padding: 8px 20px;
+  border: 2px solid #e9a2a2;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.logoutBtn:hover {
+  background-color: #ef4444;
+  color: white;
+}

@@ -1,0 +1,32 @@
+.custom-input-container {
+  margin-bottom: 20px;
+}
+
+.custom-input-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #cbd5e1; /* Cinza claro */
+  font-size: 0.9rem;
+}
+
+.custom-input-field {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background-color: #edeef0; /* Fundo escuro */
+  color: #070707;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.custom-input-field:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px #38bdf833;
+  outline: none;
+}
+
+.custom-input-field::placeholder {
+  color: #475569;
+}
