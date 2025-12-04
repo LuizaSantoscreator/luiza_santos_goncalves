@@ -129,7 +129,6 @@ const SensorData = () => {
                   ))
                 )}
               </tbody>
-
             </table>
           </div>
         )}
