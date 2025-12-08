@@ -1,4 +1,4 @@
-/* Container Principal (Fundo Claro/Gelo) */
+/* Container Principal  */
 .home-container {
   min-height: 100vh;
   background-color: #f8fafc;
@@ -12,7 +12,7 @@
   padding: 60px 20px;
 }
 
-/* Título da Página (Escuro para ler no fundo claro) */
+/* Título da Página  */
 .home-title {
   text-align: center;
   margin-bottom: 50px;
@@ -83,10 +83,6 @@
   height: 64px;
   object-fit: contain;
   margin-bottom: 20px;
-  
-  /* TRUQUE: Se seus ícones forem pretos, isso os torna brancos 
-     para aparecerem no fundo escuro. Se já forem coloridos, 
-     pode remover a linha 'filter' abaixo. */
   filter: brightness(0) invert(1); 
   
   transition: transform 0.3s ease;
