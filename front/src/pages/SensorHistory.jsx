@@ -32,7 +32,7 @@ const SensorHistory = () => {
     fetchHistorico();
   }, [id]);
 
-  // --- NOVA FUNÇÃO DE EXPORTAÇÃO ---
+  
   const handleExport = async () => {
     try {
       // Importante: responseType 'blob' para arquivos binários (Excel/PDF)
@@ -55,7 +55,7 @@ const SensorHistory = () => {
   };
   // --------------------------------
 
-  // eslint-disable-next-line react/prop-types
+  
   const CustomTooltip = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       const dados = payload[0].payload;
