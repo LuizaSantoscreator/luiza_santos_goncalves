@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import api from '../services/api';
 import CustomInput from '../components/CustomInput';
-import '../styles/pages/Login.css'; // Importação direta
+import '../styles/pages/Login.css'; 
 
 const Login = () => {
   const [username, setUsername] = useState('');
