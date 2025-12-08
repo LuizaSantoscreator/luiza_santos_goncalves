@@ -61,7 +61,7 @@ const Home = () => {
               className="home-card"
               onClick={() => navigate(item.path)}
             >
-              {/* Trocado de span para div */}
+              {/* icons */}
               <div className="card-icon">{item.icon}</div>
               <div className="card-title">{item.label}</div>
             </div>
