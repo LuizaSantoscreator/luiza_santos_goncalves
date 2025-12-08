@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/components/CustomInput.css'; // <--- CORREÇÃO: Importação direta (sem 'styles from')
+import '../styles/components/CustomInput.css'; 
 
 const CustomInput = ({ label, value, onChange, type = "text", placeholder }) => {
   return (
