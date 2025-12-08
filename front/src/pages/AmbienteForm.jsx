@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import api from '../services/api';
-// Reaproveitamos o CSS do form de sensores para manter o padrão
 import '../styles/pages/SensorForm.css';
 
 const AmbienteForm = () => {
