@@ -25,7 +25,6 @@ const Ambientes = () => {
   }, []);
 
   return (
-    // CLASSE CORRETA: ambientes-container
     <div className="ambientes-container">
       <Navbar />
       
@@ -41,7 +40,6 @@ const Ambientes = () => {
         {loading ? (
           <p style={{textAlign: 'center'}}>Carregando...</p>
         ) : (
-          // CLASSE CORRETA: ambientes-table
           <table className="ambientes-table">
             <thead>
               <tr>
